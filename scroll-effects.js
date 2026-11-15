@@ -8,48 +8,55 @@ const floats = new IntersectionObserver((entries) => {
 
 for (const stage of stages) floats.observe(stage);
 
-const intro = document.querySelector('.intro-content');
-const sections = [...document.querySelectorAll('.scroll-surface')];
+const introParts = [...document.querySelectorAll('[data-scroll-exit]')];
+const revealParts = [...document.querySelectorAll('[data-scroll-reveal], .service-list > li')];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 let scrollFrame = 0;
 
 function writeProgress(element, progress) {
   const fraction = Math.max(0, Math.min(1, progress));
   const eased = fraction * fraction * (3 - 2 * fraction);
-  element.style.setProperty('--section-progress', eased.toFixed(4));
+  element.style.setProperty('--scroll-progress', eased.toFixed(4));
 }
 
-function updateSections() {
+function updateScrollMotion() {
   scrollFrame = 0;
   if (reducedMotion.matches || document.documentElement.hasAttribute('data-decor-paused')) return;
 
   const height = window.innerHeight;
   const remaining = document.documentElement.scrollHeight - height - window.scrollY;
-  const introBox = intro.getBoundingClientRect();
-  const boxes = sections.map((section) => {
-    const box = section.getBoundingClientRect();
-    return { center: box.top + box.height / 2, naturalHeight: section.offsetHeight };
+  const introProgress = introParts.map((part) => {
+    const box = part.getBoundingClientRect();
+    return (box.top + box.height / 2) / (height * .28);
+  });
+  const revealProgress = revealParts.map((part) => {
+    const box = part.getBoundingClientRect();
+    const halfHeight = part.offsetHeight / 2;
+    // Scaling around the center leaves the original layout position recoverable.
+    const top = box.top + box.height / 2 - halfHeight;
+    const target = height * .67 - Math.min(halfHeight, height * .16);
+    // Finish elements near the footer at the last reachable scroll position.
+    const full = Math.min(height - 1, Math.max(target, top - remaining));
+    return (height - top) / (height - full);
   });
 
-  writeProgress(intro, (introBox.top + introBox.height / 2) / (height / 2));
-
-  for (const [index, { center, naturalHeight }] of boxes.entries()) {
-    const start = height + Math.min(naturalHeight / 2, height * .16);
-    // The last panel must reach its full size even at the end of the page.
-    const full = Math.min(start - 1, Math.max(height * .5, center - remaining));
-    writeProgress(sections[index], (start - center) / (start - full));
+  for (const [index, part] of introParts.entries()) {
+    writeProgress(part, introProgress[index]);
+  }
+  for (const [index, part] of revealParts.entries()) {
+    writeProgress(part, revealProgress[index]);
   }
 }
 
-function scheduleSections() {
-  if (!scrollFrame) scrollFrame = requestAnimationFrame(updateSections);
+function scheduleScrollMotion() {
+  if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScrollMotion);
 }
 
-window.addEventListener('scroll', scheduleSections, { passive: true });
-window.addEventListener('resize', scheduleSections);
-reducedMotion.addEventListener('change', scheduleSections);
-new MutationObserver(scheduleSections).observe(document.documentElement, {
+window.addEventListener('scroll', scheduleScrollMotion, { passive: true });
+window.addEventListener('resize', scheduleScrollMotion);
+reducedMotion.addEventListener('change', scheduleScrollMotion);
+new MutationObserver(scheduleScrollMotion).observe(document.documentElement, {
   attributes: true,
   attributeFilter: ['data-decor-paused'],
 });
-scheduleSections();
+scheduleScrollMotion();

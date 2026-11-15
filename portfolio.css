@@ -253,10 +253,9 @@ img { display: block; }
 .intro-action .button { min-height: 53px; min-width: 139px; font-size: 15px; }
 
 @media (prefers-reduced-motion: no-preference) {
-  :root:not([data-decor-paused]) :is(.scroll-surface, .intro-content) {
-    transform: scaleX(calc(.84 + .16 * var(--section-progress, 1)))
-      scaleY(calc(.92 + .08 * var(--section-progress, 1)));
-    opacity: calc(.43 + .57 * var(--section-progress, 1));
+  :root:not([data-decor-paused]) :is([data-scroll-reveal], [data-scroll-exit], .service-list > li):not(:has(:focus-visible)) {
+    scale: calc(.88 + .12 * var(--scroll-progress, 1));
+    opacity: calc(.48 + .52 * var(--scroll-progress, 1));
   }
 
   .intro-line { animation: text-focus 760ms var(--ease-out) both; }
@@ -293,10 +292,6 @@ img { display: block; }
 }
 
 .showcase { position: relative; isolation: isolate; }
-.showcase--websites {
-  padding-block-start: calc(var(--nav-height) + var(--nav-inset) + 31px);
-  scroll-margin-top: calc(-1 * (var(--nav-height) + 34px));
-}
 .showcase h2, .services h2, .contact h2 {
   font-size: clamp(36px, 4.9vw, 67px);
   line-height: 1.03;
