@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Портфолио Вадима, веб-разработчика. Сайты, Telegram-боты и мини-приложения, примеры работ и контакт в Telegram.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Вадим, веб-разработчик">
+  <meta property="og:description" content="Сайты, Telegram-боты и мини-приложения. Портфолио Вадима.">
+  <title>Вадим, веб-разработчик</title>
+  <link rel="icon" href="./assets/previews/vadim-avatar.webp" type="image/webp">
+  <link rel="preload" href="./assets/fonts/geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+  <link rel="stylesheet" href="./portfolio.css">
+  <script type="module" src="./carousel.js"></script>
+  <script type="module" src="./navigation.js"></script>
+  <script type="module" src="./lighting.js"></script>
+  <script type="module" src="./scroll-effects.js"></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="site-header shell">
+    <a class="wordmark" href="#top">Вадим</a>
+    <nav class="site-nav" id="site-nav" aria-label="По странице">
+      <a href="#works">Работы</a>
+      <a href="#services">Что я делаю</a>
+    </nav>
+    <div class="header-actions">
+      <a class="button button-primary header-contact" href="#contacts">Контакты</a>
+      <button class="button menu-toggle" type="button" aria-label="Открыть меню" aria-controls="site-nav" aria-expanded="false" hidden>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="first-composition">
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="intro-scene" aria-hidden="true">
+          <div class="intro-image"></div>
+          <div class="intro-rays"><i></i><i></i></div>
+          <div class="intro-spotlight"></div>
+        </div>
+        <div class="intro-content shell">
+          <div class="intro-message">
+            <h1 id="intro-title"><span class="intro-line">Вадим,</span> <span class="intro-line">веб-разработчик</span></h1>
+            <p class="intro-copy">Делаю сайты, Telegram‑ботов и мини‑приложения.</p>
+          </div>
+          <div class="intro-action">
+            <a class="button button-primary" href="https://t.me/Jecoo121" target="_blank" rel="noopener">Написать</a>
+            <a class="button button-outline" href="#works">Смотреть работы</a>
+          </div>
+        </div>
+        <button class="button lights-toggle" type="button" aria-label="Декоративное движение" title="Декоративное движение" aria-pressed="true" hidden><span aria-hidden="true"></span></button>
+      </section>
+    </div>
+
+    <div class="portfolio-field">
+      <section class="showcase showcase--websites" id="works" data-showcase="websites" aria-labelledby="works-title">
+  <div class="showcase-light" aria-hidden="true"><i></i><i></i></div>
+  <div class="shell scroll-surface">
+    <h2 id="works-title">Сайты</h2>
+    <div class="showcase-media">
+      <div class="showcase-controls" hidden>
+        <button type="button" class="button arrow" aria-label="Предыдущий сайт" aria-controls="works-stage" data-step="-1"><span aria-hidden="true"></span></button>
+        <button type="button" class="button arrow" aria-label="Следующий сайт" aria-controls="works-stage" data-step="1"><span aria-hidden="true"></span></button>
+      </div>
+      <div id="works-stage" class="stage">
+        
+      <a class="slide slide--forest" data-slide="2" data-position="-1"
+         aria-label="Открыть сайт «Под соснами»" href="https://vahfi66.github.io/pod-sosnami-site/" target="_blank" rel="noopener">
+        <picture>
+          <source media="(max-width: 767px)" srcset="./assets/previews/sosny-phone-390.webp 390w, ./assets/previews/sosny-phone.webp 780w" sizes="min(72vw, 265px)" width="780" height="1688">
+          <img src="./assets/previews/sosny-wide.webp" srcset="./assets/previews/sosny-wide-800.webp 800w, ./assets/previews/sosny-wide.webp 1440w" sizes="min(42vw, 542px)" width="1440" height="824"
+               alt="Деревянный дом «Сосны» площадью 112 м² и кнопки просмотра проектов и расчёта стоимости." decoding="async" draggable="false" fetchpriority="low">
+        </picture>
+      </a>
+      <a class="slide slide--ink" data-slide="0" data-position="0"
+         aria-label="Открыть сайт Auravell" href="https://vahfi66.github.io/auravell-site/" target="_blank" rel="noopener">
+        <picture>
+          <source media="(max-width: 767px)" srcset="./assets/previews/auravell-phone-390.webp 390w, ./assets/previews/auravell-phone.webp 780w" sizes="min(72vw, 265px)" width="780" height="1688">
+          <img src="./assets/previews/auravell-wide.webp" srcset="./assets/previews/auravell-wide-800.webp 800w, ./assets/previews/auravell-wide.webp 1440w" sizes="min(42vw, 542px)" width="1440" height="900"
+               alt="Кольцо Éclat крупным планом, цена 84 000 ₽ и кнопка «Смотреть каталог»." decoding="async" draggable="false" fetchpriority="high">
+        </picture>
+      </a>
+      <a class="slide slide--white" data-slide="1" data-position="1"
+         aria-label="Открыть сайт «Лапка плюс»" href="https://vahfi66.github.io/lapka-plus-site/" target="_blank" rel="noopener">
+        <picture>
+          <source media="(max-width: 767px)" srcset="./assets/previews/lapka-phone-390.webp 390w, ./assets/previews/lapka-phone.webp 780w" sizes="min(72vw, 265px)" width="780" height="1688">
+          <img src="./assets/previews/lapka-wide.webp" srcset="./assets/previews/lapka-wide-800.webp 800w, ./assets/previews/lapka-wide.webp 1440w" sizes="min(42vw, 542px)" width="1440" height="816"
+               alt="Демонстрационный сайт клиники. Кошка на осмотре, кнопки «Записаться» и «Услуги и цены»." decoding="async" draggable="false" fetchpriority="low">
+        </picture>
+      </a>
+      </div>
+    </div>
+    <div class="project-details">
+      <div class="project" data-project="0" data-current>
+        <div class="project-identity">
+          <h3>Auravell</h3>
+          <p>Сайт ювелирного бренда</p>
+        </div>
+        <p class="project-description">В центре первого экрана — кольцо Éclat крупным планом. Материал, цена и переход в каталог рядом, чтобы можно было рассмотреть изделие и сразу перейти к выбору.</p>
+        <a class="button button-outline project-link" aria-label="Открыть сайт Auravell"
+           href="https://vahfi66.github.io/auravell-site/" target="_blank" rel="noopener">Открыть сайт</a>
+      </div>
+      <div class="project" data-project="1" inert>
+        <div class="project-identity">
+          <h3>Лапка плюс</h3>
+          <p>Сайт ветеринарной клиники</p>
+        </div>
+        <p class="project-description">На первом экране собрал то, что ищет владелец питомца: с чем здесь помогают, где посмотреть цены и как записаться.</p>
+        <a class="button button-outline project-link" aria-label="Открыть сайт «Лапка плюс»"
+           href="https://vahfi66.github.io/lapka-plus-site/" target="_blank" rel="noopener">Открыть сайт</a>
+      </div>
+      <div class="project" data-project="2" inert>
+        <div class="project-identity">
+          <h3>Под соснами</h3>
+          <p>Сайт строительной компании</p>
+        </div>
+        <p class="project-description">Сначала показываю дом и его площадь. Если проект интересен, сразу можно прикинуть стоимость по площади и комплектации.</p>
+        <a class="button button-outline project-link" aria-label="Открыть сайт «Под соснами»"
+           href="https://vahfi66.github.io/pod-sosnami-site/" target="_blank" rel="noopener">Открыть сайт</a>
+      </div>
+    </div>
+    <span class="sr-only" role="status" data-status></span>
+  </div>
+</section>
+      <section class="showcase showcase--telegram" id="telegram" data-showcase="telegram" aria-labelledby="telegram-title">
+  <div class="showcase-light" aria-hidden="true"><i></i><i></i></div>
+  <div class="shell scroll-surface">
+    <h2 id="telegram-title">Telegram‑боты и мини‑приложения</h2>
+    <div class="showcase-media">
+      <div class="showcase-controls" hidden>
+        <button type="button" class="button arrow" aria-label="Предыдущий Telegram-проект" aria-controls="telegram-stage" data-step="-1"><span aria-hidden="true"></span></button>
+        <button type="button" class="button arrow" aria-label="Следующий Telegram-проект" aria-controls="telegram-stage" data-step="1"><span aria-hidden="true"></span></button>
+      </div>
+      <div id="telegram-stage" class="stage">
+        
+      <a class="slide slide--ink" data-slide="2" data-position="-1"
+         aria-label="Открыть Lux в Telegram" href="https://t.me/luxmanikur_bot" target="_blank" rel="noopener">
+        <picture>
+          <img src="./assets/previews/lux.webp"  width="474" height="790"
+               alt="Аватарка и приветствие демонстрационного бота Lux с кнопками записи, услуг и цен, портфолио, мастеров, отзывов и акций." decoding="async" draggable="false" loading="lazy">
+        </picture>
+      </a>
+      <a class="slide slide--ink" data-slide="0" data-position="0"
+         aria-label="Открыть Wow Fitness в Telegram" href="https://t.me/wow_fitnessbot" target="_blank" rel="noopener">
+        <picture>
+          <img src="./assets/previews/wow-fitness.webp"  width="369" height="590"
+               alt="Главный экран Wow Fitness с кнопкой «Мой абонемент», блоком ближайшего занятия и вкладками клуба, расписания и профиля." decoding="async" draggable="false" fetchpriority="low">
+        </picture>
+      </a>
+      <a class="slide slide--white" data-slide="1" data-position="1"
+         aria-label="Открыть UNREAL в Telegram" href="https://t.me/unrealshop1_bot" target="_blank" rel="noopener">
+        <picture>
+          <img src="./assets/previews/unreal.webp"  width="384" height="604"
+               alt="Каталог UNREAL с поиском, фильтрами, корзиной и карточками кроссовок и куртки с ценами." decoding="async" draggable="false" loading="lazy">
+        </picture>
+      </a>
+      </div>
+    </div>
+    <div class="project-details">
+      <div class="project" data-project="0" data-current>
+        <div class="project-identity">
+          <h3>Wow Fitness</h3>
+          <p>Telegram Mini App для фитнес-студии</p>
+        </div>
+        <p class="project-description">Вынес абонемент и ближайшее занятие на главный экран. Вкладку расписания оставил внизу, чтобы к ней можно было быстро вернуться.</p>
+        <a class="button button-outline project-link" aria-label="Открыть Wow Fitness в Telegram"
+           href="https://t.me/wow_fitnessbot" target="_blank" rel="noopener">Открыть в Telegram</a>
+      </div>
+      <div class="project" data-project="1" inert>
+        <div class="project-identity">
+          <h3>UNREAL</h3>
+          <p>Telegram Mini App для магазина одежды</p>
+        </div>
+        <p class="project-description">Каталог открывается первым, с поиском по модели или бренду. Если покупатель ещё выбирает, он может начать с категорий, а корзина видна в шапке.</p>
+        <a class="button button-outline project-link" aria-label="Открыть UNREAL в Telegram"
+           href="https://t.me/unrealshop1_bot" target="_blank" rel="noopener">Открыть в Telegram</a>
+      </div>
+      <div class="project" data-project="2" inert>
+        <div class="project-identity">
+          <h3>Lux</h3>
+          <p>Telegram-бот маникюрной студии</p>
+        </div>
+        <p class="project-description">Кнопка записи стоит первой. Если человек ещё выбирает, он может сначала посмотреть цены, работы студии и мастеров в том же чате.</p>
+        <a class="button button-outline project-link" aria-label="Открыть Lux в Telegram"
+           href="https://t.me/luxmanikur_bot" target="_blank" rel="noopener">Открыть в Telegram</a>
+      </div>
+    </div>
+    <span class="sr-only" role="status" data-status></span>
+  </div>
+</section>
+
+      <section class="services shell" id="services" aria-labelledby="services-title">
+        <div class="scroll-surface">
+          <h2 id="services-title">Что я делаю</h2>
+          <ul class="service-list">
+            <li>
+              <h3>Сайты</h3>
+              <p>Собираю сайт, где клиент может посмотреть услуги, цены или каталог и связаться с вами.</p>
+            </li>
+            <li>
+              <h3>Telegram-боты</h3>
+              <p>Настраиваю бота, который отвечает на частые вопросы, принимает заявки или уточняет детали заказа.</p>
+            </li>
+            <li>
+              <h3>Telegram Mini Apps</h3>
+              <p>Делаю приложения внутри Telegram. В них можно посмотреть товары или выбрать время записи.</p>
+            </li>
+            <li>
+              <h3>Формы заявок и заказов</h3>
+              <p>Делаю форму, которая собирает контакты и детали заказа и отправляет их туда, где вы принимаете заявки.</p>
+            </li>
+            <li>
+              <h3>Онлайн-оплата</h3>
+              <p>Подключаю оплату на сайте, чтобы клиент мог оплатить заказ или внести предоплату.</p>
+            </li>
+            <li>
+              <h3>Сайты с базой данных</h3>
+              <p>Подключаю базу данных, чтобы хранить и обновлять каталог, заявки или заказы.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="contact shell" id="contacts" aria-labelledby="contact-title">
+    <div class="contact-panel scroll-surface">
+      <div class="contact-intro">
+        <h2 id="contact-title">Контакты</h2>
+        <p>Расскажите, что нужно сделать для вашего проекта.</p>
+      </div>
+      <div class="contact-person">
+        <img class="avatar" src="./assets/previews/vadim-avatar.webp" width="144" height="144" alt="" loading="lazy">
+        <div class="contact-name"><strong>Вадим</strong><span>@Jecoo121</span></div>
+        <a class="button button-primary" href="https://t.me/Jecoo121" target="_blank" rel="noopener">Написать</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
