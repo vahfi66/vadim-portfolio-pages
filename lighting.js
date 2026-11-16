@@ -1,12 +1,10 @@
 const hero = document.querySelector('.intro');
 const scene = hero.querySelector('.intro-scene');
 const spotlight = hero.querySelector('.intro-spotlight');
-const toggle = hero.querySelector('.lights-toggle');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
 
 let inView = false;
-let enabled = true;
 let frame = 0;
 let previousTime = 0;
 let current = null;
@@ -21,9 +19,8 @@ function stopTracking() {
 }
 
 function syncLighting() {
-  const moving = enabled && inView && !reduced.matches && !document.hidden;
+  const moving = inView && !reduced.matches && !document.hidden;
   hero.toggleAttribute('data-lighting', moving);
-  toggle.hidden = reduced.matches;
   if (!moving || !finePointer.matches) stopTracking();
 }
 
@@ -50,13 +47,6 @@ hero.addEventListener('pointermove', (event) => {
   }
 }, { passive: true });
 hero.addEventListener('pointerleave', stopTracking);
-
-toggle.addEventListener('click', () => {
-  enabled = !enabled;
-  document.documentElement.toggleAttribute('data-decor-paused', !enabled);
-  toggle.setAttribute('aria-pressed', String(enabled));
-  syncLighting();
-});
 
 const minimumVisible = .12;
 const visibility = new IntersectionObserver(([entry]) => {

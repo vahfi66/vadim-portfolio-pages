@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080808">
-  <meta name="description" content="Портфолио Вадима, веб-разработчика. Сайты, Telegram-боты и мини-приложения, примеры работ и контакт в Telegram.">
+  <meta name="description" content="Разрабатываю сайты для записи, заказов и запросов сметы. Делаю ботов и мини-приложения для Telegram. Портфолио Вадима.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:title" content="Вадим, веб-разработчик">
   <meta property="og:description" content="Сайты, Telegram-боты и мини-приложения. Портфолио Вадима.">
   <title>Вадим, веб-разработчик</title>
   <link rel="icon" href="./assets/previews/vadim-avatar.webp" type="image/webp">
-  <link rel="preload" href="./assets/fonts/geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./assets/fonts/fonts.css">
   <link rel="stylesheet" href="./portfolio.css">
   <script type="module" src="./carousel.js"></script>
@@ -22,13 +22,23 @@
 <body id="top">
   <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header shell">
-    <a class="wordmark" href="#top">Вадим</a>
+    <a class="wordmark" href="#top">
+      <img class="wordmark-avatar" src="./assets/previews/vadim-avatar.webp" width="28" height="28" alt="">
+      Вадим
+    </a>
     <nav class="site-nav" id="site-nav" aria-label="По странице">
-      <a href="#works">Работы</a>
-      <a href="#services">Что я делаю</a>
+      <a class="menu-only" href="#top">Главная</a>
+      <a href="#approach">Подход</a>
+      <a href="#works">Сайты</a>
+      <a href="#telegram">Telegram</a>
+      <a href="#services">Услуги</a>
+      <a href="#terms">Условия</a>
+      <a href="#process">Этапы</a>
+      <a href="#faq">FAQ</a>
+      <a class="menu-only" href="#contacts">Контакты</a>
     </nav>
     <div class="header-actions">
-      <a class="button button-primary header-contact" href="#contacts">Контакты</a>
+      <a class="button button-primary header-contact" href="#contacts">Контакты <span class="button-symbol" aria-hidden="true">↗</span></a>
       <button class="button menu-toggle" type="button" aria-label="Открыть меню" aria-controls="site-nav" aria-expanded="false" hidden>
         <span aria-hidden="true"></span>
       </button>
@@ -45,24 +55,35 @@
         </div>
         <div class="intro-content shell">
           <div class="intro-message">
-            <h1 id="intro-title" data-scroll-exit><span class="intro-line">Вадим,</span> <span class="intro-line">веб-разработчик</span></h1>
-            <p class="intro-copy" data-scroll-exit>Делаю сайты, Telegram‑ботов и мини‑приложения.</p>
+            <h1 id="intro-title"><span class="intro-line">Сайты для бизнеса,</span> <span class="intro-line">которые&nbsp;ведут к&nbsp;заявке</span></h1>
+            <p class="intro-copy">Разрабатываю сайты для записи, заказов и запросов сметы. Делаю ботов и мини‑приложения для Telegram.</p>
           </div>
-          <div class="intro-action" data-scroll-exit>
-            <a class="button button-primary" href="https://t.me/Jecoo121" target="_blank" rel="noopener">Написать</a>
-            <a class="button button-outline" href="#works">Смотреть работы</a>
+          <div class="intro-action">
+            <a class="button button-primary" href="https://t.me/Jecoo121" target="_blank" rel="noopener">Обсудить проект <span class="button-symbol" aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#works">Смотреть работы <span class="button-symbol" aria-hidden="true">↓</span></a>
           </div>
         </div>
-        <button class="button lights-toggle" type="button" aria-label="Декоративное движение" title="Декоративное движение" aria-pressed="true" hidden><span aria-hidden="true"></span></button>
       </section>
     </div>
 
     <div class="portfolio-field">
+      <section class="content-section shell" id="approach" aria-labelledby="approach-title">
+        <div class="content-heading">
+          <h2 id="approach-title">Где сайт теряет клиентов</h2>
+          <p>Человек уже перешёл на страницу. Теперь ему нужно быстро понять, что вы предлагаете, и сделать следующий шаг.</p>
+        </div>
+        <dl class="content-rows">
+          <div><dt>Условия спрятаны</dt><dd>Если цену, сроки или примеры приходится искать, человек может уйти, так и не разобравшись в предложении.</dd></div>
+          <div><dt>До заявки слишком много шагов</dt><dd>На телефоне особенно легко потерять клиента между каталогом, контактами и длинной формой.</dd></div>
+          <div><dt>Трафик есть. Что дальше?</dt><dd>Просмотры показывают, сколько людей пришло. События аналитики помогают увидеть, откуда идут заявки и на каком шаге люди останавливаются.</dd></div>
+        </dl>
+      </section>
+
       <section class="showcase showcase--websites" id="works" data-showcase="websites" aria-labelledby="works-title">
   <div class="showcase-light" aria-hidden="true"><i></i><i></i></div>
   <div class="shell">
-    <h2 id="works-title" data-scroll-reveal>Сайты</h2>
-    <div class="showcase-media" data-scroll-reveal>
+    <h2 id="works-title">Сайты</h2>
+    <div class="showcase-media">
       <div class="showcase-controls" hidden>
         <button type="button" class="button arrow" aria-label="Предыдущий сайт" aria-controls="works-stage" data-step="-1"><span aria-hidden="true"></span></button>
         <button type="button" class="button arrow" aria-label="Следующий сайт" aria-controls="works-stage" data-step="1"><span aria-hidden="true"></span></button>
@@ -95,7 +116,7 @@
       </a>
       </div>
     </div>
-    <div class="project-details" data-scroll-reveal>
+    <div class="project-details">
       <div class="project" data-project="0" data-current>
         <div class="project-identity">
           <h3>Auravell</h3>
@@ -130,8 +151,8 @@
       <section class="showcase showcase--telegram" id="telegram" data-showcase="telegram" aria-labelledby="telegram-title">
   <div class="showcase-light" aria-hidden="true"><i></i><i></i></div>
   <div class="shell">
-    <h2 id="telegram-title" data-scroll-reveal>Telegram‑боты и мини‑приложения</h2>
-    <div class="showcase-media" data-scroll-reveal>
+    <h2 id="telegram-title">Telegram‑боты и мини‑приложения</h2>
+    <div class="showcase-media">
       <div class="showcase-controls" hidden>
         <button type="button" class="button arrow" aria-label="Предыдущий Telegram-проект" aria-controls="telegram-stage" data-step="-1"><span aria-hidden="true"></span></button>
         <button type="button" class="button arrow" aria-label="Следующий Telegram-проект" aria-controls="telegram-stage" data-step="1"><span aria-hidden="true"></span></button>
@@ -145,33 +166,24 @@
                alt="Аватарка и приветствие демонстрационного бота Lux с кнопками записи, услуг и цен, портфолио, мастеров, отзывов и акций." decoding="async" draggable="false" loading="lazy">
         </picture>
       </a>
-      <a class="slide slide--ink" data-slide="0" data-position="0"
-         aria-label="Открыть Wow Fitness в Telegram" href="https://t.me/wow_fitnessbot" target="_blank" rel="noopener">
-        <picture>
-          <img src="./assets/previews/wow-fitness.webp"  width="369" height="590"
-               alt="Главный экран Wow Fitness с кнопкой «Мой абонемент», блоком ближайшего занятия и вкладками клуба, расписания и профиля." decoding="async" draggable="false" fetchpriority="low">
-        </picture>
-      </a>
-      <a class="slide slide--white" data-slide="1" data-position="1"
+      <a class="slide slide--white" data-slide="0" data-position="0"
          aria-label="Открыть UNREAL в Telegram" href="https://t.me/unrealshop1_bot" target="_blank" rel="noopener">
         <picture>
           <img src="./assets/previews/unreal.webp"  width="384" height="604"
-               alt="Каталог UNREAL с поиском, фильтрами, корзиной и карточками кроссовок и куртки с ценами." decoding="async" draggable="false" loading="lazy">
+               alt="Каталог UNREAL с поиском, фильтрами, корзиной и карточками кроссовок и куртки с ценами." decoding="async" draggable="false" fetchpriority="low">
+        </picture>
+      </a>
+      <a class="slide slide--ink" data-slide="1" data-position="1"
+         aria-label="Открыть Wow Fitness в Telegram" href="https://t.me/wow_fitnessbot" target="_blank" rel="noopener">
+        <picture>
+          <img src="./assets/previews/wow-fitness.webp"  width="369" height="590"
+               alt="Главный экран Wow Fitness с кнопкой «Мой абонемент», блоком ближайшего занятия и вкладками клуба, расписания и профиля." decoding="async" draggable="false" loading="lazy">
         </picture>
       </a>
       </div>
     </div>
-    <div class="project-details" data-scroll-reveal>
+    <div class="project-details">
       <div class="project" data-project="0" data-current>
-        <div class="project-identity">
-          <h3>Wow Fitness</h3>
-          <p>Telegram Mini App для фитнес-студии</p>
-        </div>
-        <p class="project-description">Вынес абонемент и ближайшее занятие на главный экран. Вкладку расписания оставил внизу, чтобы к ней можно было быстро вернуться.</p>
-        <a class="button button-outline project-link" aria-label="Открыть Wow Fitness в Telegram"
-           href="https://t.me/wow_fitnessbot" target="_blank" rel="noopener">Открыть в Telegram</a>
-      </div>
-      <div class="project" data-project="1" inert>
         <div class="project-identity">
           <h3>UNREAL</h3>
           <p>Telegram Mini App для магазина одежды</p>
@@ -179,6 +191,15 @@
         <p class="project-description">Каталог открывается первым, с поиском по модели или бренду. Если покупатель ещё выбирает, он может начать с категорий, а корзина видна в шапке.</p>
         <a class="button button-outline project-link" aria-label="Открыть UNREAL в Telegram"
            href="https://t.me/unrealshop1_bot" target="_blank" rel="noopener">Открыть в Telegram</a>
+      </div>
+      <div class="project" data-project="1" inert>
+        <div class="project-identity">
+          <h3>Wow Fitness</h3>
+          <p>Telegram Mini App для фитнес-студии</p>
+        </div>
+        <p class="project-description">Вынес абонемент и ближайшее занятие на главный экран. Вкладку расписания оставил внизу, чтобы к ней можно было быстро вернуться.</p>
+        <a class="button button-outline project-link" aria-label="Открыть Wow Fitness в Telegram"
+           href="https://t.me/wow_fitnessbot" target="_blank" rel="noopener">Открыть в Telegram</a>
       </div>
       <div class="project" data-project="2" inert>
         <div class="project-identity">
@@ -194,35 +215,53 @@
   </div>
 </section>
 
-      <section class="services shell" id="services" aria-labelledby="services-title">
-        <div>
-          <h2 id="services-title" data-scroll-reveal>Что я делаю</h2>
-          <ul class="service-list">
-            <li>
-              <h3>Сайты</h3>
-              <p>Собираю сайт, где клиент может посмотреть услуги, цены или каталог и связаться с вами.</p>
-            </li>
-            <li>
-              <h3>Telegram-боты</h3>
-              <p>Настраиваю бота, который отвечает на частые вопросы, принимает заявки или уточняет детали заказа.</p>
-            </li>
-            <li>
-              <h3>Telegram Mini Apps</h3>
-              <p>Делаю приложения внутри Telegram. В них можно посмотреть товары или выбрать время записи.</p>
-            </li>
-            <li>
-              <h3>Формы заявок и заказов</h3>
-              <p>Делаю форму, которая собирает контакты и детали заказа и отправляет их туда, где вы принимаете заявки.</p>
-            </li>
-            <li>
-              <h3>Онлайн-оплата</h3>
-              <p>Подключаю оплату на сайте, чтобы клиент мог оплатить заказ или внести предоплату.</p>
-            </li>
-            <li>
-              <h3>Сайты с базой данных</h3>
-              <p>Подключаю базу данных, чтобы хранить и обновлять каталог, заявки или заказы.</p>
-            </li>
-          </ul>
+      <section class="content-section shell" id="services" aria-labelledby="services-title">
+        <div class="content-heading">
+          <h2 id="services-title">От первого экрана до заявки</h2>
+          <p>Собираю страницу вокруг действия, которое важно для вашего бизнеса. Это может быть запись, заказ или запрос сметы.</p>
+        </div>
+        <dl class="content-rows">
+          <div><dt>Структура</dt><dd>Расставляю предложение, цены, примеры и кнопки в том порядке, в котором клиенту удобно принимать решение.</dd></div>
+          <div><dt>Тексты и подача</dt><dd>Помогаю сформулировать, что вы предлагаете, кому это подходит и за что клиент платит. Пишу тексты на основе ваших материалов и разговора о продукте.</dd></div>
+          <div><dt>Интеграции</dt><dd>Подключаю отправку заявок в Telegram или CRM. Если задача требует, добавляю запись, оплату, бота или мини‑приложение.</dd></div>
+          <div><dt>Аналитика</dt><dd>Настраиваю события для важных действий. Можно увидеть, сколько посетителей нажало на запись и сколько дошло до отправки заявки.</dd></div>
+        </dl>
+      </section>
+
+      <section class="content-section shell" id="terms" aria-labelledby="terms-title">
+        <div class="content-heading">
+          <h2 id="terms-title">Что согласуем до запуска</h2>
+          <p>Вы заранее понимаете объём проекта, видите промежуточный результат и получаете доступы после публикации.</p>
+        </div>
+        <dl class="content-rows">
+          <div><dt>Бюджет и объём</dt><dd>До старта обсуждаем стоимость, сроки и список работ. Дополнительные задачи согласуем отдельно.</dd></div>
+          <div><dt>Дизайн первого экрана</dt><dd>Сначала показываю направление на одном экране. На этом этапе проще скорректировать подачу до сборки всей страницы.</dd></div>
+          <div><dt>Доступы и управление</dt><dd>Уточняем, что вы захотите менять после запуска и как это будет устроено. При передаче показываю, где обновлять эти данные.</dd></div>
+        </dl>
+      </section>
+
+      <section class="content-section shell" id="process" aria-labelledby="process-title">
+        <div class="content-heading">
+          <h2 id="process-title">Этапы разработки</h2>
+          <p>На каждом этапе можно увидеть результат и обсудить следующий шаг.</p>
+        </div>
+        <ol class="process-list">
+          <li><h3>Разбираем задачу</h3><p>Обсуждаем продукт, клиентов и то, какое действие посетитель должен сделать на сайте.</p></li>
+          <li><h3>Собираю структуру и тексты</h3><p>Показываю черновик страницы: какие вопросы она закрывает, где будут примеры и как человек дойдёт до заявки.</p></li>
+          <li><h3>Согласуем дизайн</h3><p>Показываю первый экран и визуальное направление. После согласования оформляю остальные разделы.</p></li>
+          <li><h3>Разрабатываю и подключаю сервисы</h3><p>Собираю мобильную и настольную версии, подключаю согласованные интеграции и проверяю путь до заявки.</p></li>
+          <li><h3>Публикую и передаю сайт</h3><p>Запускаю сайт, проверяю отправку заявок и события аналитики, передаю доступы и инструкцию.</p></li>
+        </ol>
+      </section>
+
+      <section class="content-section shell" id="faq" aria-labelledby="faq-title">
+        <div class="content-heading"><h2 id="faq-title">Частые вопросы</h2></div>
+        <div class="faq-list">
+          <details><summary>Сколько стоит сайт и сколько времени займёт работа?</summary><p>Это зависит от объёма, контента и интеграций. После обсуждения задачи назову стоимость и сроки, чтобы вы могли принять решение до старта.</p></details>
+          <details><summary>Нужно ли мне готовить текст и техническое задание?</summary><p>Для первого разговора достаточно рассказать об услуге, клиентах и цели сайта. Если есть фотографии, цены или примеры, можно прислать их в Telegram.</p></details>
+          <details><summary>Что, если мне не подойдёт дизайн?</summary><p>Сначала обсуждаем концепцию первого экрана. На этом этапе можно изменить композицию, формулировки или настроение страницы до полной сборки.</p></details>
+          <details><summary>Можно подключить CRM, оплату или Telegram?</summary><p>Да. Уточним, какими сервисами вы пользуетесь и какие данные нужно передавать. Подключение войдёт в согласованный объём проекта.</p></details>
+          <details><summary>Смогу ли я обновлять сайт после запуска?</summary><p>Да, если предусмотрим это при разработке. Заранее решим, что вы будете менять сами. После запуска передам доступы и покажу, где это делать.</p></details>
         </div>
       </section>
     </div>
@@ -231,10 +270,10 @@
   <footer class="contact shell" id="contacts" aria-labelledby="contact-title">
     <div class="contact-panel">
       <div class="contact-intro">
-        <h2 id="contact-title" data-scroll-reveal>Контакты</h2>
-        <p data-scroll-reveal>Расскажите, что нужно сделать для вашего проекта.</p>
+        <h2 id="contact-title">Обсудим ваш проект</h2>
+        <p>Напишите, чем занимается ваш бизнес и что должен делать сайт или бот.</p>
       </div>
-      <div class="contact-person" data-scroll-reveal>
+      <div class="contact-person">
         <img class="avatar" src="./assets/previews/vadim-avatar.webp" width="144" height="144" alt="" loading="lazy">
         <div class="contact-name"><strong>Вадим</strong><span>@Jecoo121</span></div>
         <a class="button button-primary" href="https://t.me/Jecoo121" target="_blank" rel="noopener">Написать</a>

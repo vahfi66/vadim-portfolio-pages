@@ -51,16 +51,6 @@ export const showcases = {
     linkLabel: 'Открыть в Telegram',
     projects: [
       {
-        name: 'Wow Fitness',
-        type: 'Telegram Mini App для фитнес-студии',
-        url: 'https://t.me/wow_fitnessbot',
-        openLabel: 'Открыть Wow Fitness в Telegram',
-        description: 'Вынес абонемент и ближайшее занятие на главный экран. Вкладку расписания оставил внизу, чтобы к ней можно было быстро вернуться.',
-        image: { file: 'wow-fitness.webp', width: 369, height: 590 },
-        background: 'ink',
-        alt: 'Главный экран Wow Fitness с кнопкой «Мой абонемент», блоком ближайшего занятия и вкладками клуба, расписания и профиля.',
-      },
-      {
         name: 'UNREAL',
         type: 'Telegram Mini App для магазина одежды',
         url: 'https://t.me/unrealshop1_bot',
@@ -69,6 +59,16 @@ export const showcases = {
         image: { file: 'unreal.webp', width: 384, height: 604 },
         background: 'white',
         alt: 'Каталог UNREAL с поиском, фильтрами, корзиной и карточками кроссовок и куртки с ценами.',
+      },
+      {
+        name: 'Wow Fitness',
+        type: 'Telegram Mini App для фитнес-студии',
+        url: 'https://t.me/wow_fitnessbot',
+        openLabel: 'Открыть Wow Fitness в Telegram',
+        description: 'Вынес абонемент и ближайшее занятие на главный экран. Вкладку расписания оставил внизу, чтобы к ней можно было быстро вернуться.',
+        image: { file: 'wow-fitness.webp', width: 369, height: 590 },
+        background: 'ink',
+        alt: 'Главный экран Wow Fitness с кнопкой «Мой абонемент», блоком ближайшего занятия и вкладками клуба, расписания и профиля.',
       },
       {
         name: 'Lux',

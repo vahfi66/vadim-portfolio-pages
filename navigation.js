@@ -1,7 +1,7 @@
 const header = document.querySelector('.site-header');
 const toggle = header.querySelector('.menu-toggle');
 const nav = header.querySelector('.site-nav');
-const mobile = matchMedia('(max-width: 640px)');
+const mobile = matchMedia('(max-width: 980px)');
 
 function setMenu(open) {
   header.dataset.menu = open ? 'open' : 'closed';
