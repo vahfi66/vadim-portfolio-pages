@@ -6,12 +6,11 @@ const coarsePointer = matchMedia('(pointer: coarse)');
 let tappedControl;
 let tapTimer;
 
-document.addEventListener('click', (event) => {
+function showTapFeedback(event) {
   const touchTap = event.pointerType === 'touch' || event.pointerType === 'pen'
     || (!event.pointerType && event.detail > 0 && coarsePointer.matches);
   if (!touchTap) return;
-  const control = event.target.closest('.button, .site-nav a, .wordmark, .faq-list summary');
-  if (!control) return;
+  const control = event.currentTarget;
 
   clearTimeout(tapTimer);
   tappedControl?.removeAttribute('data-tapped');
@@ -21,7 +20,11 @@ document.addEventListener('click', (event) => {
     control.removeAttribute('data-tapped');
     tappedControl = undefined;
   }, 150);
-}, { capture: true });
+}
+
+for (const control of document.querySelectorAll('.button, .site-nav a, .wordmark, .faq-list summary')) {
+  control.addEventListener('click', showTapFeedback);
+}
 
 function setMenu(open) {
   header.dataset.menu = open ? 'open' : 'closed';
