@@ -137,7 +137,7 @@ img { display: block; }
 .first-composition { position: relative; }
 .portfolio-field { background: linear-gradient(var(--ink), #030303 11%, #030303 86%, var(--ink)); }
 .intro {
-  --workspace-photo: url('./assets/previews/workspace-photo.jpg');
+  --workspace-photo: url('./assets/previews/workspace-photo-wide.webp');
   position: relative;
   isolation: isolate;
   display: grid;
@@ -168,11 +168,10 @@ img { display: block; }
 .intro-image {
   background: linear-gradient(180deg, #08080866, #08080879 52%, #080808f2),
     var(--workspace-photo) 50% 58% / cover no-repeat;
-  filter: grayscale(1);
   transform: scale(1.06);
 }
 
-/* Light Rays, with monochrome gradients and a slower sweep for the workspace. */
+/* Static monochrome reflections behind the workspace. */
 .intro-rays i {
   position: absolute;
   display: block;
@@ -234,19 +233,11 @@ img { display: block; }
   .intro-line { animation: intro-title-in 740ms var(--ease-out) both; }
   .intro-line:last-child { animation-delay: 110ms; }
   .intro-copy { animation: intro-title-in 620ms var(--ease-out) 200ms both; }
-  .intro-rays i { animation: light-drift 10s ease-in-out -2.3s infinite alternate paused; }
-  .intro-rays i + i { animation-duration: 13s; animation-delay: -6s; animation-direction: alternate-reverse; }
-  .intro[data-lighting] .intro-rays i { animation-play-state: running; }
 }
 
 @keyframes intro-title-in {
   from { opacity: 0; filter: blur(9px); transform: translateY(13px); }
   to { opacity: 1; filter: blur(0); transform: translateY(0); }
-}
-
-@keyframes light-drift {
-  from { opacity: .25; transform: translate3d(-12%, -16%, 0) rotate(-22deg) scale(.88); }
-  to { opacity: .94; transform: translate3d(38%, 30%, 0) rotate(10deg) scale(1.17); }
 }
 
 .showcase { position: relative; isolation: isolate; }
@@ -522,13 +513,6 @@ img { display: block; }
   .slide[data-slide='1'] { animation-duration: 5.2s; animation-delay: -3s; }
   .slide[data-slide='2'] { animation-duration: 4.4s; animation-delay: -.65s; }
 
-  .showcase-light i { animation: showcase-glow 6.4s ease-in-out -2s infinite alternate paused; }
-  .showcase-light i + i { animation-duration: 8.5s; animation-delay: -4s; animation-direction: alternate-reverse; }
-  .showcase--telegram .showcase-light i { animation-direction: alternate-reverse; }
-  .showcase--telegram .showcase-light i + i { animation-direction: alternate; }
-
-  .showcase[data-floating] .showcase-light i { animation-play-state: running; }
-
   .showcase[data-floating]:not([data-stepping], [data-dragging]) .slide[data-slide]:not(:focus-visible) {
     animation-play-state: running;
   }
@@ -546,12 +530,6 @@ img { display: block; }
   to { translate: 0 -9px; }
 }
 
-@keyframes showcase-glow {
-  from { opacity: .25; transform: translate3d(-11%, -20px, 0) rotate(-15deg); }
-  44% { opacity: .72; }
-  to { opacity: .37; transform: translate3d(22%, 40px, 0) rotate(14deg); }
-}
-
 @media (min-width: 768px) and (max-width: 910px) {
   .showcase--websites .stage { --card-width: 43%; }
   .arrow[data-step='-1'] { left: 0; }
@@ -560,6 +538,7 @@ img { display: block; }
 
 @media (max-width: 767px) {
   :root { --gutter: clamp(12px, 3.7vw, 24px); }
+  .intro { --workspace-photo: url('./assets/previews/workspace-photo-mobile.webp'); }
   .intro-content {
     gap: clamp(22px, 4svh, 38px);
     padding-block: clamp(25px, 5svh, 52px) clamp(55px, 7svh, 70px);
@@ -603,7 +582,6 @@ img { display: block; }
   .wordmark { font-size: 18px; }
   .header-contact { padding-inline: 14px; }
   .site-nav .menu-only { display: inline-flex; }
-  .site-header:not([data-menu]) .site-nav { grid-column: 1 / -1; grid-row: 2; flex-wrap: wrap; justify-content: center; }
   .site-header[data-menu] .site-nav {
     position: absolute;
     top: calc(100% + 8px);

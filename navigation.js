@@ -35,4 +35,3 @@ mobile.addEventListener('change', () => {
 });
 
 setMenu(false);
-toggle.hidden = false;
