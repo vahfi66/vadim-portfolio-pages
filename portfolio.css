@@ -659,7 +659,7 @@ img { display: block; }
 @media (prefers-reduced-motion: reduce) {
   :root { scroll-behavior: auto; }
   .button, .arrow span, .arrow::before, .site-nav, .site-nav a, .menu-toggle span, .menu-toggle span::before, .slide::before, .slide::after, .intro-spotlight { transition: none !important; }
-  .button:hover, .button:active, [data-tapped], .arrow:hover span, .arrow:hover::before, .arrow[data-tapped] span { transform: none; }
+  .button:hover, .button:active, :is(.button, .site-nav a)[data-tapped], .arrow:hover span, .arrow:hover::before, .arrow[data-tapped] span { transform: none; }
 }
 
 @media (forced-colors: active) {
