@@ -489,6 +489,19 @@ img { display: block; }
 .content-rows > div { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 19px; padding-block: 23px; }
 .content-rows dt, .process-list h3 { font-size: clamp(17px, 1.65vw, 23px); font-weight: 750; line-height: 1.25; letter-spacing: -.028em; }
 .content-rows dd, .process-list p, .faq-list p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.65; }
+
+@media (min-width: 981px) {
+  #approach { align-items: center; }
+  #approach .content-rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
+  #approach .content-rows > div { grid-template-columns: minmax(0, 1fr); align-content: start; gap: 10px; padding-block: 18px; }
+}
+
+@media (max-width: 980px) {
+  #approach { grid-template-columns: minmax(0, 1fr); }
+  #approach .content-heading h2 { max-width: none; }
+  #approach .content-heading p { max-width: 54ch; }
+}
+
 .process-list { margin: 0; padding: 0; list-style: none; counter-reset: steps; }
 .process-list li { counter-increment: steps; display: grid; grid-template-columns: 3ch minmax(0, 1fr); column-gap: 20px; row-gap: 8px; padding-block: 21px; }
 .process-list li::before { grid-row: span 2; content: counter(steps, decimal-leading-zero); color: var(--muted); font-size: 14px; line-height: 1.8; font-variant-numeric: tabular-nums; }
