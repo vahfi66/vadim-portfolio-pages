@@ -26,6 +26,46 @@ for (const control of document.querySelectorAll('.button, .site-nav a, .wordmark
   control.addEventListener('click', showTapFeedback);
 }
 
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+for (const details of document.querySelectorAll('.faq-list details')) {
+  const summary = details.querySelector('summary');
+  const answer = details.querySelector('p');
+  let animation;
+
+  summary.addEventListener('click', (event) => {
+    const open = !details.open || details.hasAttribute('data-closing');
+    if (reducedMotion.matches && !animation) return;
+    event.preventDefault();
+
+    const start = details.getBoundingClientRect().height;
+    animation?.cancel();
+
+    function finish() {
+      details.open = open;
+      details.removeAttribute('data-closing');
+      details.removeAttribute('data-resizing');
+      animation = undefined;
+    }
+
+    if (reducedMotion.matches) {
+      finish();
+      return;
+    }
+
+    details.open = true;
+    details.toggleAttribute('data-closing', !open);
+    details.setAttribute('data-resizing', '');
+    const expanded = details.getBoundingClientRect().height;
+    const end = open ? expanded : expanded - answer.getBoundingClientRect().height;
+    animation = details.animate([{ height: `${start}px` }, { height: `${end}px` }], {
+      duration: 280,
+      easing: 'cubic-bezier(.25, .7, .25, 1)',
+    });
+    animation.onfinish = finish;
+  });
+}
+
 function setMenu(open) {
   header.dataset.menu = open ? 'open' : 'closed';
   toggle.setAttribute('aria-expanded', String(open));

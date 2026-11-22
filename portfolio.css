@@ -406,14 +406,15 @@ img { display: block; }
 .content-heading p { max-width: 36ch; margin-block-start: 20px; color: var(--muted); line-height: 1.6; }
 .content-rows { margin: 0; }
 .approach-statement {
-  margin: clamp(29px, 5vw, 60px) auto 0;
+  grid-column: 1 / -1;
+  margin: 0 auto;
   color: #fff;
   text-align: center;
-  max-width: 28ch;
-  font-size: clamp(23px, 3.2vw, 42px);
+  max-width: 24ch;
+  font-size: clamp(32px, 5vw, 67px);
   font-weight: 750;
-  line-height: 1.35;
-  letter-spacing: -.04em;
+  line-height: 1.08;
+  letter-spacing: -.055em;
   text-wrap: balance;
 }
 .content-rows > div, .process-list > li, .faq-list > details { border-block-end: 1px solid var(--rule); }
@@ -427,7 +428,12 @@ img { display: block; }
 .faq-list summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 54px; padding-block: 16px; cursor: pointer; list-style: none; font-weight: 700; }
 .faq-list summary::-webkit-details-marker { display: none; }
 .faq-list summary::after { content: ''; flex: 0 0 9px; height: 9px; border: solid currentColor; border-width: 0 1px 1px 0; rotate: 45deg; margin-inline-end: 4px; }
-.faq-list details[open] summary::after { rotate: 225deg; }
+.faq-list details[open]:not([data-closing]) summary::after { rotate: 225deg; }
+.faq-list details[data-resizing] { overflow: clip; }
+.faq-list details[data-resizing] summary:focus-visible { outline-offset: -2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .faq-list summary::after { transition: rotate 280ms cubic-bezier(.25, .7, .25, 1); }
+}
 .faq-list p { max-width: 56ch; padding-block: 0 20px; }
 
 .contact { margin-block-end: clamp(20px, 5vw, 70px); }
