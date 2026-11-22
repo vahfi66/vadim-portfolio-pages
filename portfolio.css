@@ -484,6 +484,22 @@ img { display: block; }
 .content-heading h2 { max-width: 16ch; font-weight: 750; letter-spacing: -.06em; text-wrap: balance; }
 .content-heading p { max-width: 36ch; margin-block-start: 20px; color: var(--muted); line-height: 1.6; }
 .content-rows { margin: 0; }
+.approach-statement {
+  margin: clamp(29px, 5vw, 60px) 0 0;
+  max-width: 28ch;
+  font-size: clamp(23px, 3.2vw, 42px);
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+.approach-statement mark {
+  padding: .04em .23em .09em;
+  border-radius: .18em;
+  background: var(--cream);
+  color: var(--ink);
+  white-space: nowrap;
+}
 .content-rows > div, .process-list > li, .faq-list > details { border-block-end: 1px solid var(--rule); }
 .content-rows, .process-list, .faq-list { border-block-start: 1px solid var(--rule); }
 .content-rows > div { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 19px; padding-block: 23px; }
@@ -525,7 +541,19 @@ img { display: block; }
 .contact-name strong { font: 590 19px/1.15 var(--title-font); letter-spacing: -.04em; }
 .contact-name span { color: var(--muted); font-size: 15px; }
 .avatar { width: 49px; height: 49px; border-radius: 50%; object-fit: cover; }
-.contact-person .button { min-height: 46px; font-size: 15px; }
+.contact-channels { display: flex; align-items: center; gap: 8px; }
+.contact-channels > span { margin-inline: 3px; font-size: 14px; font-weight: 700; }
+.contact-channels .contact-channel { width: 44px; min-height: 44px; padding: 0; }
+
+@media (max-width: 420px) {
+  .contact-person {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 10px 13px;
+    border-radius: 26px;
+  }
+  .contact-channels { grid-column: 1 / -1; }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .slide[data-slide] { animation: preview-float 4.8s ease-in-out -1.7s infinite alternate paused; }
@@ -648,7 +676,6 @@ img { display: block; }
   .contact-name { padding-inline-end: 0; }
   .contact-name strong { font-size: 18px; }
   .contact-name span { font-size: 14px; }
-  .contact-person .button { padding-inline: 14px; font-size: 14px; }
   .avatar { width: 42px; height: 42px; }
 }
 
