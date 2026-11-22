@@ -275,10 +275,11 @@ img { display: block; }
   z-index: -1;
   pointer-events: none;
   background: var(--showcase-background);
-  mask-image: linear-gradient(transparent, #000 15% 79%, transparent);
+  mask-image: var(--showcase-mask, linear-gradient(transparent, #000 15% 79%, transparent));
 }
 .showcase--websites {
-  --showcase-background: radial-gradient(ellipse 82% 112% at 0% 18%, #202020, #121212 46%, #080808 90%);
+  --showcase-background: linear-gradient(112deg, #171717, #101010 45%, #080808 88%);
+  --showcase-mask: linear-gradient(transparent, #000 28% 67%, transparent);
 }
 .showcase--websites h2 { font-size: clamp(31px, 3.6vw, 52px); }
 .showcase-media { position: relative; margin-block-start: clamp(16px, 1.65vw, 23px); }
