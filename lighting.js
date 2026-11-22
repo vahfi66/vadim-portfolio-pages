@@ -58,15 +58,3 @@ document.addEventListener('visibilitychange', syncLighting);
 reduced.addEventListener('change', syncLighting);
 finePointer.addEventListener('change', syncLighting);
 syncLighting();
-
-// Magic Card's pointer-local edge highlight, on the existing preview links.
-document.querySelectorAll('.stage').forEach((stage) => {
-  stage.addEventListener('pointermove', (event) => {
-    if (!finePointer.matches || reduced.matches || event.pointerType === 'touch') return;
-    const card = event.target.closest('.slide[data-slide]');
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--glow-x', `${100 * (event.clientX - rect.left) / rect.width}%`);
-    card.style.setProperty('--glow-y', `${100 * (event.clientY - rect.top) / rect.height}%`);
-  }, { passive: true });
-});
