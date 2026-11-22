@@ -260,6 +260,15 @@ img { display: block; }
 }
 
 .showcase { position: relative; isolation: isolate; }
+.showcase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(var(--showcase-light-angle, 112deg), #171717, #101010 45%, #080808 88%);
+  mask-image: linear-gradient(transparent, #000 28% 67%, transparent);
+}
 .showcase h2, .content-heading h2, .contact h2 {
   font-size: clamp(36px, 4.9vw, 67px);
   line-height: 1.03;
@@ -379,6 +388,7 @@ img { display: block; }
 .project-link { justify-self: start; min-height: 44px; padding-inline: 17px; font-size: 16px; }
 
 .showcase--telegram {
+  --showcase-light-angle: 248deg;
   margin-block-start: clamp(70px, 8vw, 122px);
   padding-block: clamp(37px, 5.3vw, 73px) clamp(37px, 5.3vw, 70px);
 }
