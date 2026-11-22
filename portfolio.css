@@ -20,7 +20,12 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; }
+body {
+  margin: 0;
+  background:
+    linear-gradient(90deg, #0004, transparent 38% 66%, #0003),
+    linear-gradient(180deg, var(--ink) 11%, #111 25%, #0a0a0a 42%, #111 61%, #0b0b0b 78%, #101010 93%, var(--ink));
+}
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-family: var(--title-font); }
 a { color: inherit; text-decoration: none; }
@@ -154,7 +159,6 @@ img { display: block; }
 }
 
 .first-composition { position: relative; }
-.portfolio-field { background: linear-gradient(var(--ink), #030303 11%, #030303 86%, var(--ink)); }
 .intro {
   --workspace-photo: url('./assets/previews/workspace-photo-wide.webp');
   position: relative;
@@ -260,15 +264,6 @@ img { display: block; }
 }
 
 .showcase { position: relative; isolation: isolate; }
-.showcase::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: linear-gradient(var(--showcase-light-angle, 112deg), #171717, #101010 45%, #080808 88%);
-  mask-image: linear-gradient(transparent, #000 28% 67%, transparent);
-}
 .showcase h2, .content-heading h2, .contact h2 {
   font-size: clamp(36px, 4.9vw, 67px);
   line-height: 1.03;
@@ -388,7 +383,6 @@ img { display: block; }
 .project-link { justify-self: start; min-height: 44px; padding-inline: 17px; font-size: 16px; }
 
 .showcase--telegram {
-  --showcase-light-angle: 248deg;
   margin-block-start: clamp(70px, 8vw, 122px);
   padding-block: clamp(37px, 5.3vw, 73px) clamp(37px, 5.3vw, 70px);
 }
