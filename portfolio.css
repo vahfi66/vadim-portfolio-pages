@@ -20,12 +20,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-body {
-  margin: 0;
-  background:
-    linear-gradient(90deg, #0004, transparent 38% 66%, #0003),
-    linear-gradient(180deg, var(--ink) 11%, #111 25%, #0a0a0a 42%, #111 61%, #0b0b0b 78%, #101010 93%, var(--ink));
-}
+body { margin: 0; }
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-family: var(--title-font); }
 a { color: inherit; text-decoration: none; }
@@ -264,7 +259,8 @@ img { display: block; }
 }
 
 .showcase { position: relative; isolation: isolate; }
-.showcase h2, .content-heading h2, .contact h2 {
+.showcase h2, .approach-statement, .content-heading h2, .contact h2 {
+  font-family: var(--title-font);
   font-size: clamp(36px, 4.9vw, 67px);
   line-height: 1.03;
   font-weight: 650;
@@ -272,14 +268,17 @@ img { display: block; }
 }
 
 .showcase h2 { text-align: center; text-wrap: balance; }
-.showcase--websites::before {
+.showcase::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(108deg, #1b1b1b, #141414 34%, #0b0b0b 74%, #070707);
-  mask-image: linear-gradient(transparent, #000 26%, #000 59%, transparent);
+  background: var(--showcase-background);
+  mask-image: linear-gradient(transparent, #000 15% 79%, transparent);
+}
+.showcase--websites {
+  --showcase-background: radial-gradient(ellipse 82% 112% at 0% 18%, #292929, #141414 43%, #000 83%);
 }
 .showcase--websites h2 { font-size: clamp(31px, 3.6vw, 52px); }
 .showcase-media { position: relative; margin-block-start: clamp(16px, 1.65vw, 23px); }
@@ -391,6 +390,7 @@ img { display: block; }
 .project-link { justify-self: start; min-height: 44px; padding-inline: 17px; font-size: 16px; }
 
 .showcase--telegram {
+  --showcase-background: radial-gradient(ellipse 58% 72% at 94% 70%, #202020, #111 53%, transparent);
   margin-block-start: clamp(70px, 8vw, 122px);
   padding-block: clamp(37px, 5.3vw, 73px) clamp(37px, 5.3vw, 70px);
 }
@@ -418,18 +418,6 @@ img { display: block; }
 
 .content-heading h2 { max-width: 16ch; font-weight: 750; letter-spacing: -.06em; text-wrap: balance; }
 .content-heading p { max-width: 36ch; margin-block-start: 20px; color: var(--muted); line-height: 1.6; }
-:is(#terms, #process, #faq) .content-heading {
-  position: relative;
-  isolation: isolate;
-}
-:is(#terms, #process, #faq) .content-heading::before {
-  content: '';
-  position: absolute;
-  inset: -24px 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 22% 43%, #ffffff09, transparent 72%);
-}
 .content-rows { margin: 0; }
 .approach-statement {
   grid-column: 1 / -1;
@@ -438,9 +426,6 @@ img { display: block; }
   text-align: center;
   max-width: 24ch;
   font-size: clamp(32px, 5vw, 67px);
-  font-weight: 750;
-  line-height: 1.08;
-  letter-spacing: -.055em;
   text-wrap: balance;
 }
 .content-rows > div, .process-list > li, .faq-list > details { border-block-end: 1px solid var(--rule); }
