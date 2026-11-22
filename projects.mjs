@@ -14,9 +14,9 @@ export const showcases = {
         url: 'https://vahfi66.github.io/lapka-plus-site/',
         openLabel: 'Открыть сайт «Лапка плюс»',
         description: 'Лендинг ветеринарной клиники для привлечения записей из рекламы. Услуги, информация о врачах и ответы на вопросы выстроены последовательно: каждый блок помогает разобраться в предложении и перейти к записи на приём.',
-        image: { file: 'lapka-wide.webp', width: 1440, height: 900, small: 'lapka-wide-800.webp' },
+        image: { file: 'lapka-wide.webp', width: 1425, height: 900, small: 'lapka-wide-800.webp' },
         mobile: { file: 'lapka-phone.webp', width: 780, height: 1688, small: 'lapka-phone-390.webp' },
-        background: 'white',
+        background: 'photo',
         alt: 'Собака рядом с хозяином, заголовок «Ему легче, вам спокойней», запись и срочная помощь.',
       },
       {
@@ -28,7 +28,7 @@ export const showcases = {
         image: { file: 'auravell-wide.webp', width: 1440, height: 900, small: 'auravell-wide-800.webp' },
         mobile: { file: 'auravell-phone.webp', width: 780, height: 1688, small: 'auravell-phone-390.webp' },
         background: 'ink',
-        alt: 'Кольцо Éclat крупным планом, цена 84 000 ₽ и кнопка «Смотреть каталог».',
+        alt: 'Кольцо Éclat крупным планом, цена 84 000 ₽ и переход в каталог.',
       },
       {
         name: 'Под соснами',
